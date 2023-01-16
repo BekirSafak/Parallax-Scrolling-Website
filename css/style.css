@@ -20,12 +20,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
   /* ? min-height 100vh verildiği zaman linear-gradient sayfayı kaplıyor. */
   background: linear-gradient(var(--mainColor1), var(--mainColor2));
+  overflow-x: hidden;
+  /*! overflow-x JS ile gelen left değerinin kayma yapmaması için verildi. */
 }
 
 header {
@@ -82,6 +85,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  /*! overflow hidden JS'den gelen scrollY valueları dolayısıyla sayfanın alt tarafa taşmasını önlemek için verildi. */
 }
 
 section::before {
@@ -117,6 +122,7 @@ section img#mountains_front {
 
 #text {
   position: absolute;
+  right: -350px;
   color: var(--mainText);
   white-space: nowrap;
   /*? white-space özelliği, bir öğenin içindeki boş alanların nasıl kullanılacağını belirtir. */
@@ -142,6 +148,7 @@ section img#mountains_front {
   position: relative;
   padding: 100px;
   background: var(--secBGColor);
+  z-index: 10;
 }
 
 .sec h2 {
