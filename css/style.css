@@ -8,6 +8,9 @@
 
   --hoverTextColor: #2b1055;
   --hoverBGC: #fff;
+
+  --btnBGColor: #fff;
+  --btnTextColor: #2b1055;
 }
 
 * {
@@ -32,6 +35,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 
 header .logo {
@@ -66,4 +70,56 @@ header ul li a:hover,
 header ul li a.active {
   background: var(--hoverBGC);
   color: var(--hoverTextColor);
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section img#moon {
+  mix-blend-mode: screen;
+  /*? mix-blend-mode, bir eleman ile elemanın arkasındaki görüntünün karışmasını sağlayan CSS özelliğidir.  */
+}
+
+section img#mountains_front {
+  z-index: 10;
+}
+
+#text {
+  position: absolute;
+  color: var(--mainText);
+  white-space: nowrap;
+  /*? white-space özelliği, bir öğenin içindeki boş alanların nasıl kullanılacağını belirtir. */
+  /*? white-space:Metin <br> etiketi ile karşılaşana kadar aynı satırda devam eder. */
+  font-size: 7.5vw;
+  z-index: 9;
+}
+
+#btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 36px;
+  margin-top: 65px;
+  border-radius: 40px;
+  background: var(--btnBGColor);
+  color: var(--btnTextColor);
+  font-size: 1.5em;
+  z-index: 9;
+  transform: translateY(100px);
 }
