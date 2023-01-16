@@ -11,6 +11,8 @@
 
   --btnBGColor: #fff;
   --btnTextColor: #2b1055;
+
+  --secBGColor: #1c0522;
 }
 
 * {
@@ -82,6 +84,18 @@ section {
   align-items: center;
 }
 
+section::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, var(--secBGColor), transparent);
+  /*? Buradaki kodlar section ile id="sec" olan div arasındaki ayrım çizgisini flu hale getirerek görsel iyileştirme sağlamak amaçlı yazıldı. */
+  /*? Nasıl çalıştığını anlamanız için background: kısmındaki transparent değerini #fff ile değiştirebilirsiniz. */
+  z-index: 1000;
+}
+
 section img {
   position: absolute;
   top: 0;
@@ -122,4 +136,21 @@ section img#mountains_front {
   font-size: 1.5em;
   z-index: 9;
   transform: translateY(100px);
+}
+
+.sec {
+  position: relative;
+  padding: 100px;
+  background: var(--secBGColor);
+}
+
+.sec h2 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: var(--mainText);
+}
+
+.sec p {
+  font-size: 1.2em;
+  color: var(--mainText);
 }
